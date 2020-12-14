@@ -3,7 +3,7 @@ from PIL import Image
 import io, json
 import numpy as np
 import cv2 as cv
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket #, WebSocketDisconnect
 from pydantic import BaseModel
 import onnxruntime as rt
 import os
@@ -102,6 +102,6 @@ async def websocket_endpoint(websocket: WebSocket):
             img = bytes_to_image(bytes_data)
             result = inference_detector(sess, img.copy(), THRESHOLD)
             await websocket.send_json(result)
-    except WebSocketDisconnect:
+    except:# WebSocketDisconnect:
         # print('Disconnect')
         pass
