@@ -68,7 +68,6 @@ if bytesObj or url:
     # Run FastAPI
     payload = json.dumps({
       "base64str": base64str,
-      "threshold": 0.3
     })
 
     # response = requests.put("http://localhost/predict",data = payload)

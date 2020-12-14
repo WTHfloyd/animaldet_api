@@ -32,8 +32,9 @@ def drawboundingbox(img, boxes,pred_cls, rect_th=2, text_size=1, text_th=2):
 
 if __name__ == '__main__':
     image_path = 'app/test/dog.jpg'
-    url = "http://127.0.0.1:8000/predict"
+    # url = "http://127.0.0.1:8000/predict"
     # url = "http://localhost/predict"
+    url = "http://159.203.26.162/predict"
     with open(image_path, "rb") as image_file:
         base64str = base64.b64encode(image_file.read()).decode("utf-8")
     payload = json.dumps({
