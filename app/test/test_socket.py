@@ -4,7 +4,8 @@ import cv2 as cv
 import time
 
 async def hello(bytes):
-    uri = 'ws://127.0.0.1:8000/predict' 
+    # uri = 'ws://127.0.0.1:8000/predict' 
+    uri = "ws://159.203.26.162/predict"
     async with websockets.connect(uri) as websocket:
         t0 = time.time()
         await websocket.send(bytes)

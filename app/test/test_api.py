@@ -44,6 +44,6 @@ if __name__ == '__main__':
     response = requests.put(url,data = payload)
     data_dict = response.json()
     for index in range(len(data_dict['classes'])):
-        print(f'{data_dict["classes"][index]}, conf={data_dict["confidence"][index]:.2f}, box={data_dict["boxes"][index]}')
+        print(f'{data_dict["classes"][index]}, conf={data_dict["confidence"][index]:.2f}, box={data_dict["boxes"][index]}, time={data_dict["time"]}')
     img = Image.open(image_path)
     drawboundingbox(img, data_dict['boxes'], data_dict['classes'])
